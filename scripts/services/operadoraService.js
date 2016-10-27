@@ -1,7 +1,7 @@
 angular.module("listaTelefonica").service("operadoraService", operadoraService);
 
-function operadoraService($http) {
+function operadoraService($http, config) {
 	this.carregarOperadoras = function() {
-		return $http.get("http://localhost/express-api/operadoras");
+		return $http.get(config.baseUrl + "/operadoras");
 	};
 };
