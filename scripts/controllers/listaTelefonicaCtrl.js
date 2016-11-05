@@ -2,7 +2,7 @@
 
 		var listaTelefonicaCtrl = listaTelefonicaCtrl;
 
-		function listaTelefonicaCtrl($scope, $log, $filter, uppercaseFilter, contatoService, operadoraService, nameFilter) {
+		function listaTelefonicaCtrl($scope, $log, $filter, uppercaseFilter, contatoService, operadoraService, nameFilter, ellipsisFilter) {
 
 			var vm = this;
 

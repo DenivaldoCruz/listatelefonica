@@ -25,6 +25,7 @@
 	<script type="text/javascript" src="scripts/services/operadoraService.js"></script>
 	<script type="text/javascript" src="scripts/config/configValue.js"></script>
 	<script type="text/javascript" src="scripts/filters/nameFilter.js"></script>
+	<script type="text/javascript" src="scripts/filters/ellipsisFilter.js"></script>
 </head>
 <body ng-controller="listaTelefonicaCtrl as listaCtrl">
 	Válido: {{contatoForm.$valid}}
@@ -49,7 +50,7 @@
 				</tr>
 				<tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos | limitTo:10 | filter:{nome: criterio} | orderBy:campoOrdenacao:direcaoOrdenacao" ng-click="listaCtrl.mostrarContato(contato)">
 					<td><input type="checkbox" ng-model="contato.selecionado" /></td>
-					<td>{{contato.nome | name}}</td>
+					<td>{{contato.nome | name | ellipsis:10}}</td>
 					<td>{{contato.telefone | limitTo:13}}</td>
 					<td>{{contato.operadora.nome}}</td>
 					<td>{{contato.operadora.categoria | uppercase}}</td>
